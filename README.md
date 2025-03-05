@@ -1,79 +1,108 @@
-# Evaluating FFT Input in Shallow and Pre-trained CNNs Using Keras
-
 ## Project Overview
 
-This project aims to explore the effectiveness of using Fast Fourier Transform (FFT)-transformed inputs in shallow convolutional neural networks (CNNs) as compared to traditional spatial domain inputs. Additionally, it evaluates the benefits of combining FFT and spatial inputs and compares shallow models with deeper pre-trained models, such as ResNet. The project analyzes performance, training time, convergence, and failure cases of FFT-based inputs across several image classification datasets.
+This project investigates and compares the performance of three convolutional neural network (CNN) architectures on two popular image classification datasets—MNIST and Fashion MNIST. The architectures include:
+
+- **Simple CNN:** A baseline model designed from scratch.
+- **VGG16:** A pretrained model using transfer learning.
+- **ResNet50:** Another powerful pretrained model using transfer learning.
+
+The goal is to evaluate how these architectures perform across three types of input representations:
+  
+1. **Original Grayscale Images:** The raw 28×28 single-channel images.
+2. **FFT Transformed Images:** Images transformed into the frequency domain using the Fast Fourier Transform (FFT), with features captured as magnitude and phase channels.
+3. **Wavelet Transformed Images:** Images processed using discrete wavelet transforms to capture multi-scale features through approximation and detail coefficients.
+
+---
 
 ## Key Objectives
 
-- **Evaluate FFT Inputs:** Does the FFT-transformed input enhance classification performance in shallow CNNs compared to spatial inputs?
-- **Hybrid Input Testing:** Does combining FFT and spatial inputs provide complementary benefits, especially under dropout regularization?
-- **Comparison with Pre-trained Models:** How do shallow CNNs with FFT inputs compare to deeper, pre-trained models like ResNet?
-- **Dataset Sensitivity:** Which datasets benefit most from FFT, spatial, or hybrid inputs, and how does performance vary across different image types?
+- **Model Comparison:**  
+  Benchmark and contrast a simple CNN (built from scratch) against advanced transfer learning architectures (VGG16 and ResNet50) to understand the trade-offs between model complexity and performance.
 
-## Datasets
+- **Input Representation Impact:**  
+  Determine the effect of different image transformation techniques (original, FFT, and wavelet) on classification performance.
 
-The experiments use the following image classification datasets:
+- **Dataset Generalization:**  
+  Analyze how well each model performs on two distinct datasets (MNIST and Fashion MNIST), which vary in content complexity and visual features.
 
-- **CIFAR-10:** 60,000 images (32x32x3), 10 classes.
-- **CIFAR-100:** 100 classes for broader distribution insights.
-- **EuroSAT:** 27,000 satellite images (64x64x3), 10 classes.
-- **MNIST:** 70,000 handwritten digits (28x28x1), 10 classes.
-- **SVHN:** 600,000 street view house numbers (32x32x3), 10 classes.
-- **MS COCO (classification subset):** General object classification, 80 classes resized to 128x128x3.
+---
+
+## Dataset
+
+- **MNIST:**  
+  - **Content:** Handwritten digits (0–9).  
+  - **Properties:** Grayscale images of size 28×28, simple visual features.
+
+- **Fashion MNIST:**  
+  - **Content:** Clothing items (e.g., shirts, trousers, sneakers).  
+  - **Properties:** Grayscale images of size 28×28, with more complex textures and shapes than MNIST.
+
+*Both datasets undergo normalization (scaling pixel values to [0, 1]) and reshaping (adding an explicit channel dimension) to prepare them for model input.*
+
+---
 
 ## Methodology
 
-### Data Preprocessing
+### Data Processing
 
-- **FFT Transformation:** Apply FFT to each image's RGB channels separately and use the magnitude and phase components.
-- **Hybrid Inputs:** Concatenate FFT and spatial inputs along the channel axis.
-- **Normalization:** Normalize both FFT and spatial inputs to ensure stable training.
+- **Normalization & Reshaping:**  
+  Convert pixel values to float32 in the range [0, 1] and reshape images from (28, 28) to (28, 28, 1).
+
+- **Feature Extraction Techniques:**
+  - **Original Images:**  
+    Use the preprocessed grayscale images directly.
+  - **FFT Transformation:**  
+    Apply a 2D FFT on the single-channel images. Extract and combine magnitude and phase information into a two-channel image.
+  - **Wavelet Transformation:**  
+    Apply discrete wavelet transforms (e.g., using Haar wavelets) to decompose images. Resize and stack the approximation and detail coefficients to form a four-channel image.
+
+- **Input Transformation for Transfer Learning:**  
+  The models based on VGG16 and ResNet50 require input images of shape (224, 224, 3). A dedicated transformer (built with a resizing layer and a convolutional adjustment, if needed) converts the raw input images (whether 1, 2, or 4 channels) into the required format.
 
 ### Experimental Design
 
-1. **Baseline Shallow CNN with Spatial Inputs:**
-   - Architecture: 4 convolutional layers with max pooling and dropout.
-   - Purpose: Establish baseline performance with spatial inputs.
+- **Architectures:**
+  - **Simple CNN:**  
+    A custom-built model that serves as a baseline for performance comparisons.
+  - **VGG16 & ResNet50:**  
+    Pretrained models adapted via transfer learning. Their base layers are frozen, and custom fully connected layers are added for the final classification task.
 
-2. **Shallow CNN with FFT Inputs:**
-   - Architecture: Same as baseline, but with FFT inputs.
-   - Purpose: Evaluate FFT input performance in shallow networks.
+- **Training Regimen:**
+  - **Datasets:** Experiments are run on both MNIST and Fashion MNIST.
+  - **Data Representations:** For each dataset, separate models are trained on the original images, FFT-transformed images, and wavelet-transformed images.
+  - **Callbacks:**  
+    - *EarlyStopping* to avoid overfitting.
+    - *ModelCheckpoint* to store the best-performing model.
+    - *ReduceLROnPlateau* to adjust the learning rate dynamically.
 
-3. **Shallow CNN with Hybrid Inputs:**
-   - Architecture: Dual input branches (FFT and spatial) merging into fully connected layers.
-   - Purpose: Assess potential improvements from combined inputs.
+- **Evaluation Metrics:**
+  - **Accuracy:** Overall percentage of correctly classified samples.
+  - **Classification Report:** Includes precision, recall, and F1-score for each class.
+  - **Confusion Matrix:** Detailed breakdown of prediction errors to identify misclassification patterns.
 
-4. **Fine-tuned Pre-trained ResNet:**
-   - Fine-tuning only the final few layers.
-   - Purpose: Compare FFT performance in shallow CNNs vs. deeper pre-trained models.
+### Metrics of Evaluation
 
-## Metrics of Evaluation
+Each trained model is evaluated using:
+- **Overall Test Accuracy:** How well the model generalizes on unseen data.
+- **Classification Report & Confusion Matrix:** Provide insights into class-specific performance and misclassifications.
 
-- **Accuracy:** Ratio of correct predictions.
-- **Precision & Recall:** Especially important in multi-class datasets like MS COCO.
-- **F1 Score:** Harmonic mean of precision and recall, useful in imbalanced datasets.
-- **Training Time:** Total time for model training.
-- **Convergence:** Number of epochs until validation accuracy stabilizes.
-- **Failure Case Analysis:** Identifying scenarios where FFT inputs underperform, particularly on simpler datasets like MNIST.
-
-## Timeline
-
-- **Weeks 1-3:** Set up, load datasets, and run baseline experiments.
-- **Weeks 4-6:** Evaluate shallow CNNs with FFT inputs.
-- **Weeks 7-9:** Conduct hybrid input experiments.
-- **Weeks 10-12:** Fine-tune the pre-trained ResNet.
-- **Weeks 13-14:** Conduct robustness and generalization tests.
-- **Weeks 15-16:** Finalize the report and documentation.
+---
 
 ## Deliverables
 
-1. **Performance Report:** A detailed analysis comparing FFT, spatial, and hybrid inputs.
-2. **Failure Case Analysis:** Insights into failure scenarios for FFT inputs.
-3. **Comparison of Shallow and Pre-trained Models:** Performance insights across model types.
-4. **Robustness Report:** Performance under noise and data augmentations.
-5. **Codebase:** Full Keras-based code for preprocessing, model architecture, and experiments.
-6. **Final Report:** Complete with visualizations and recommendations for future work.
+- **Model Checkpoints:**  
+  Saved models (in `.keras` format) for each architecture (Simple CNN, VGG16, ResNet50) and each data representation (original, FFT, wavelet) on both MNIST and Fashion MNIST.
+
+- **Evaluation Outputs:**  
+  Detailed classification reports and confusion matrices for each experimental branch.
+
+- **Jupyter Notebook Documentation:**  
+  A well-commented notebook that details all aspects of data processing, model building, training, and evaluation. This document serves as both a record of the experiments and a reproducible resource for future work.
+
+- **Comparative Analysis Report:**  
+  A summary comparing the performance of the three architectures across different datasets and data representations, including insights on which combinations yield the best results and recommendations for future research.
+
+---
 
 ## License
 
