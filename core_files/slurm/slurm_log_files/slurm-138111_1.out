@@ -1,0 +1,94 @@
+ARRAY_TASK_ID: 1
+GPU Info:
+Wed Mar 26 23:20:40 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 555.42.06              Driver Version: 555.42.06      CUDA Version: 12.5     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:88:00.0 Off |                    0 |
+|  0%   27C    P8             22W /  300W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+2025-03-26 23:20:42.090770: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-03-26 23:20:43.505854: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-03-26 23:20:46,496 - INFO - Images preprocessed.
+/public/conda/Miniconda/envs/tensorflow-2.16/lib/python3.11/site-packages/keras/src/layers/convolutional/base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+2025-03-26 23:20:46.871614: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1928] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 43720 MB memory:  -> device: 0, name: NVIDIA A40, pci bus id: 0000:88:00.0, compute capability: 8.6
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1743027649.553369  489356 service.cc:145] XLA service 0x7fcfd0006dc0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1743027649.553403  489356 service.cc:153]   StreamExecutor device (0): NVIDIA A40, Compute Capability 8.6
+2025-03-26 23:20:49.604858: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-03-26 23:20:49.856581: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:465] Loaded cuDNN version 8900
+I0000 00:00:1743027657.298414  489356 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-03-26 23:22:59,893 - INFO - Original MNIST Test Accuracy: 0.992100
+/public/conda/Miniconda/envs/tensorflow-2.16/lib/python3.11/site-packages/keras/src/layers/convolutional/base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+2025-03-26 23:24:10,357 - INFO - FFT MNIST Test Accuracy: 0.910400
+/public/conda/Miniconda/envs/tensorflow-2.16/lib/python3.11/site-packages/keras/src/layers/convolutional/base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+2025-03-26 23:26:42,626 - INFO - Wavelet MNIST Test Accuracy: 0.993600
+2025-03-26 23:26:43,578 - INFO - Images preprocessed.
+2025-03-26 23:26:43,579 - INFO - Evaluating for 0% missing data
+2025-03-26 23:26:53,315 - INFO - Evaluating for 2% missing data
+2025-03-26 23:27:02,505 - INFO - Evaluating for 4% missing data
+2025-03-26 23:27:11,830 - INFO - Evaluating for 6% missing data
+2025-03-26 23:27:21,011 - INFO - Evaluating for 8% missing data
+2025-03-26 23:27:30,901 - INFO - Evaluating for 10% missing data22025-03-26 23:27:39,924 - INFO - Evaluating for 12% missing data22025-03-26 23:27:49,034 - INFO - Evaluating for 14% missing data22025-03-26 23:27:57,815 - INFO - Evaluating for 16% missing data2025-03-26 23:28:06,751 - INFO - Evaluating for 18% missing data
+
+2025-03-26 23:28:15,636 - INFO - Evaluating for 20% missing data
+2025-03-26 23:28:24,370 - INFO - Evaluating for 22% missing data
+2025-03-26 23:28:37,505 - INFO - Evaluating for 25% missing data
+2025-03-26 23:28:33,116 - INFO - Evaluating for 24% missing data
+2025-03-26 23:28:46,682 - INFO - Evaluating for 27% missing data
+2025-03-26 23:28:55,551 - INFO - Evaluating for 29% missing data
+2025-03-26 23:29:04,593 - INFO - Evaluating for 31% missing data
+2025-03-26 23:29:13,257 - INFO - Evaluating for 33% missing data
+2025-03-26 23:29:22,133 - INFO - Evaluating for 35% missing data
+2025-03-26 23:29:30,721 - INFO - Evaluating for 37% missing data
+2025-03-26 23:29:40,188 - INFO - Evaluating for 39% missing data
+2025-03-26 23:29:49,109 - INFO - Evaluating for 41% missing data
+2025-03-26 23:29:57,555 - INFO - Evaluating for 43% missing data
+2025-03-26 23:30:06,826 - INFO - Evaluating for 45% missing data
+2025-03-26 23:30:19,956 - INFO - Evaluating for 48% missing data
+2025-03-26 23:30:15,435 - INFO - Evaluating for 47% missing data
+2025-03-26 23:30:28,712 - INFO - Evaluating for 50% missing data
+2025-03-26 23:30:37,834 - INFO - Evaluating for 52% missing data
+2025-03-26 23:30:46,649 - INFO - Evaluating for 54% missing data
+2025-03-26 23:30:55,948 - INFO - Evaluating for 56% missing data
+2025-03-26 23:31:05,650 - INFO - Evaluating for 58% missing data
+2025-03-26 23:31:14,838 - INFO - Evaluating for 60% missing data
+2025-03-26 23:31:23,915 - INFO - Evaluating for 62% missing data
+2025-03-26 23:31:32,713 - INFO - Evaluating for 64% missing data
+2025-03-26 23:31:41,634 - INFO - Evaluating for 66% missing data
+2025-03-26 23:31:50,532 - INFO - Evaluating for 68% missing data
+2025-03-26 23:31:59,685 - INFO - Evaluating for 70% missing data
+2025-03-26 23:32:09,112 - INFO - Evaluating for 72% missing data
+2025-03-26 23:32:18,140 - INFO - Evaluating for 74% missing data
+2025-03-26 23:32:26,923 - INFO - Evaluating for 76% missing data
+2025-03-26 23:32:36,100 - INFO - Evaluating for 78% missing data
+2025-03-26 23:32:45,100 - INFO - Evaluating for 80% missing data
+2025-03-26 23:32:58,454 - INFO - Evaluating for 83% missing data
+2025-03-26 23:32:54,233 - INFO - Evaluating for 82% missing data
+2025-03-26 23:33:07,842 - INFO - Evaluating for 85% missing data
+2025-03-26 23:33:17,214 - INFO - Evaluating for 87% missing data
+2025-03-26 23:33:26,290 - INFO - Evaluating for 89% missing data
+2025-03-26 23:33:35,351 - INFO - Evaluating for 91% missing data
+2025-03-26 23:33:44,167 - INFO - Evaluating for 93% missing data
+2025-03-26 23:33:52,970 - INFO - Evaluating for 95% missing data
+2025-03-26 23:34:02,286 - INFO - Evaluating for 97% missing data
+2025-03-26 23:34:06,606 - INFO - Evaluating for 98% missing data
+2025-03-26 23:34:10,874 - INFO - Evaluating for 99% missing data
+2025-03-26 23:34:15,703 - INFO - Analysis completed and all results saved.

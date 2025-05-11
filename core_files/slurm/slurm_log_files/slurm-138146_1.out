@@ -1,0 +1,481 @@
+ARRAY_TASK_ID: 1
+GPU Info:
+Thu Mar 27 07:15:17 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 555.42.06              Driver Version: 555.42.06      CUDA Version: 12.5     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:1B:00.0 Off |                    0 |
+|  0%   27C    P8             22W /  300W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+2025-03-27 07:15:38.258082: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-03-27 07:15:56.887894: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-03-27 07:16:38,175 - INFO - Images preprocessed.
+2025-03-27 07:16:42.109501: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1928] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 43720 MB memory:  -> device: 0, name: NVIDIA A40, pci bus id: 0000:1b:00.0, compute capability: 8.6
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1743056210.785848  519711 service.cc:145] XLA service 0x7fa164002ce0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1743056210.785883  519711 service.cc:153]   StreamExecutor device (0): NVIDIA A40, Compute Capability 8.6
+2025-03-27 07:16:51.657369: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+I0000 00:00:1743056244.796389  519711 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-03-27 08:04:06,987 - INFO - resnet Original MNIST Test Accuracy: 0.911600
+2025-03-27 08:31:13,527 - INFO - resnet FFT MNIST Test Accuracy: 0.100000
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+2025-03-27 08:58:36,445 - INFO - resnet Wavelet MNIST Test Accuracy: 0.737200
+2025-03-27 08:58:37,601 - INFO - Images preprocessed.
+2025-03-27 08:58:37,602 - INFO - Evaluating for 0% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 08:59:06,492 - INFO - Evaluating for 1% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 08:59:32,572 - INFO - Evaluating for 2% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 08:59:58,601 - INFO - Evaluating for 3% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:00:28,998 - INFO - Evaluating for 4% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:00:58,984 - INFO - Evaluating for 5% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:01:28,896 - INFO - Evaluating for 6% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:02:02,767 - INFO - Evaluating for 7% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:02:32,723 - INFO - Evaluating for 8% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:03:02,699 - INFO - Evaluating for 9% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:03:32,679 - INFO - Evaluating for 10% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:03:59,342 - INFO - Evaluating for 11% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:04:33,043 - INFO - Evaluating for 12% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:04:58,859 - INFO - Evaluating for 13% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:05:24,658 - INFO - Evaluating for 14% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:05:54,430 - INFO - Evaluating for 15% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:06:20,262 - INFO - Evaluating for 16% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:06:42,758 - INFO - Evaluating for 17% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:07:12,576 - INFO - Evaluating for 18% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:07:42,309 - INFO - Evaluating for 19% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:08:08,167 - INFO - Evaluating for 20% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:08:37,901 - INFO - Evaluating for 21% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:09:07,767 - INFO - Evaluating for 22% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:09:33,585 - INFO - Evaluating for 23% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:09:56,112 - INFO - Evaluating for 24% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:10:21,977 - INFO - Evaluating for 25% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:10:47,821 - INFO - Evaluating for 26% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:11:17,585 - INFO - Evaluating for 27% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:11:43,460 - INFO - Evaluating for 28% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:12:09,349 - INFO - Evaluating for 29% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:12:35,712 - INFO - Evaluating for 30% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:12:57,776 - INFO - Evaluating for 31% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:13:27,539 - INFO - Evaluating for 32% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:13:53,492 - INFO - Evaluating for 33% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:14:23,255 - INFO - Evaluating for 34% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:14:56,975 - INFO - Evaluating for 35% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:15:22,857 - INFO - Evaluating for 36% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:15:49,365 - INFO - Evaluating for 37% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:16:23,133 - INFO - Evaluating for 38% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:17:18,989 - INFO - Evaluating for 40% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:17:41,001 - INFO - Evaluating for 41% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:18:06,919 - INFO - Evaluating for 42% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:18:33,378 - INFO - Evaluating for 43% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:19:07,170 - INFO - Evaluating for 44% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:19:33,085 - INFO - Evaluating for 45% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:19:59,037 - INFO - Evaluating for 46% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:20:24,987 - INFO - Evaluating for 47% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:20:50,906 - INFO - Evaluating for 48% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:21:12,918 - INFO - Evaluating for 49% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:21:39,412 - INFO - Evaluating for 50% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:22:35,620 - INFO - Evaluating for 52% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:23:01,823 - INFO - Evaluating for 53% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:23:28,083 - INFO - Evaluating for 54% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:23:58,216 - INFO - Evaluating for 55% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:24:28,273 - INFO - Evaluating for 56% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:24:58,947 - INFO - Evaluating for 57% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:25:29,018 - INFO - Evaluating for 58% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:25:59,080 - INFO - Evaluating for 59% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:26:29,038 - INFO - Evaluating for 60% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:26:58,941 - INFO - Evaluating for 61% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:27:24,836 - INFO - Evaluating for 62% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:27:51,305 - INFO - Evaluating for 63% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:28:13,362 - INFO - Evaluating for 64% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:28:43,269 - INFO - Evaluating for 65% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:29:09,238 - INFO - Evaluating for 66% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:29:39,086 - INFO - Evaluating for 67% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:30:08,943 - INFO - Evaluating for 68% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:30:38,784 - INFO - Evaluating for 69% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:31:05,308 - INFO - Evaluating for 70% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:31:35,195 - INFO - Evaluating for 71% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encou/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:32:31,028 - INFO - Evaluating for 73% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:33:00,865 - INFO - Evaluating for 74% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:33:26,851 - INFO - Evaluating for 75% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:34:19,277 - INFO - Evaluating for 77% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:35:15,249 - INFO - Evaluating for 79% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:35:41,155 - INFO - Evaluating for 80% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:36:07,131 - INFO - Evaluating for 81% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:36:29,128 - INFO - Evaluating for 82% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:36:55,630 - INFO - Evaluating for 83% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:37:25,533 - INFO - Evaluating for 84% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-p/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:38:21,304 - INFO - Evaluating for 86% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:38:51,174 - INFO - Evaluating for 87% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:39:17,008 - INFO - Evaluating for 88% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:39:42,894 - INFO - Evaluating for 89% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:40:12,636 - INFO - Evaluating for 90% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:40:35,226 - INFO - Evaluating for 91% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:41:38,904 - INFO - Evaluating for 93% missing data
+2025-03-27 09:42:39,065 - INFO - Evaluating for 95% missing data
+packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 09:42:08,970 - INFO - Evaluating for 94% missing data
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     

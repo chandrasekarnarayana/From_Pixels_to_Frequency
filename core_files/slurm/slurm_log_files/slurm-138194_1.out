@@ -1,0 +1,113 @@
+ARRAY_TASK_ID: 1
+GPU Info:
+Thu Mar 27 17:03:11 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 555.42.06              Driver Version: 555.42.06      CUDA Version: 12.5     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:1B:00.0 Off |                    0 |
+|  0%   31C    P8             22W /  300W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+2025-03-27 17:03:34.600434: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-03-27 17:04:09.881174: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-03-27 17:05:13,843 - INFO - Images preprocessed.
+2025-03-27 17:05:18.056881: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1928] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 43720 MB memory:  -> device: 0, name: NVIDIA A40, pci bus id: 0000:1b:00.0, compute capability: 8.6
+2025-03-27 17:05:26.582894: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:465] Loaded cuDNN version 8900
+ 550150 service.cc:145] XLA service 0x7ff35400f130 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1743091521.297353  550150 service.cc:153]   StreamExecutor device (0): NVIDIA A40, Compute Capability 8.6
+2025-03-27 17:05:21.951736: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+I0000 00:00:1743091545.873154  550150 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-03-27 17:12:09,396 - INFO - vgg16 Original Fashion MNIST Test Accuracy: 0.861100
+2025-03-27 17:15:02,896 - INFO - vgg16 FFT Fashion MNIST Test Accuracy: 0.578600
+2025-03-27 17:18:07,367 - INFO - vgg16 Wavelet Fashion MNIST Test Accuracy: 0.790400
+2025-03-27 17:18:08,593 - INFO - Images preprocessed.
+2025-03-27 17:18:08,620 - INFO - Evaluating for 0% missing data
+2025-03-27 17:18:16,483 - INFO - Evaluating for 1% missing data
+2025-03-27 17:18:21,909 - INFO - Evaluating for 2% missing data
+2025-03-27 17:18:27,676 - INFO - Evaluating for 3% missing data
+2025-03-27 17:18:33,664 - INFO - Evaluating for 4% missing data
+2025-03-27 17:18:56,302 - INFO - Evaluating for 8% missing data
+2025-03-27 17:19:01,746 - INFO - Evaluating for 9% missing data
+2025-03-27 17:19:07,452 - INFO - Evaluating for 10% missing data2025-03-272025-03-27 17:19:40,662 - INFO - Evaluating for 16% missing data
+ 17:19:18,363 - INFO - Evaluating for 12% missing data
+2025-03-27 17:19:24,237 - INFO - Evaluating for 13% missing data
+2025-03-27 17:19:29,751 - INFO - Evaluating for 14% missing data
+2025-03-27 17:19:35,202 - INFO - Evaluating for 15% missing data
+2025-03-27 17:20:04,317 - INFO - Evaluating for 20% missing data
+2025-03-27 17:19:53,052 - INFO - Evaluating for 18% missing data
+2025-03-27 17:19:58,547 - INFO - Evaluating for 19% missing data
+2025-03-27 17:20:37,598 - INFO - Evaluating for 26% missing data
+2025-03-27 17:20:43,445 - INFO - Evaluating for 27% missing data
+2025-03-27 17:20:21,088 - INFO - Evaluating for 23% missing data
+2025-03-27 17:20:26,578 - INFO - Evaluating for 24% missing data
+2025-03-27 17:20:32,112 - INFO - Evaluating for 25% missing data
+2025-03-27 17:20:55,053 - INFO - Evaluating for 29% missing data
+2025-03-27 17:21:06,929 - INFO - Evaluating for 31% missing data
+2025-03-27 17:21:18,197 - INFO - Evaluating for 33% missing data
+2025-03-27 17:21:29,220 - INFO - Evaluating for 35% missing data
+2025-03-27 17:21:46,535 - INFO - Evaluating for 38% missing data
+2025-03-27 17:21:40,482 - INFO - Evaluating for 37% missing data
+2025-03-27 17:22:03,399 - INFO - Evaluating for 41% missing data
+2025-03-27 17:21:57,856 - INFO - Evaluating for 40% missing data
+2025-03-27 17:22:14,737 - INFO - Evaluating for 43% missing data
+2025-03-27 17:22:25,847 - INFO - Evaluating for 45% missing data
+2025-03-27 17:22:37,884 - INFO - Evaluating for 47% missing data
+2025-03-27 17:22:43,992 - INFO - Evaluating for 48% missing data
+2025-03-27 17:22:55,381 - INFO - Evaluating for 50% missing data
+2025-03-27 17:23:06,193 - INFO - Evaluating for 52% missing data
+2025-03-27 17:23:17,471 - INFO - Evaluating for 54% missing data
+2025-03-27 17:23:28,498 - INFO - Evaluating for 56% missing data
+2025-03-27 17:23:39,854 - INFO - Evaluating for 58% missing data
+2025-03-27 17:24:07,953 - INFO - Evaluating for 63% missing data
+2025-03-27 17:24:13,938 - INFO - Evaluating for 64% missing data
+2025-03-27 17:23:57,027 - INFO - Evaluating for 61% missing data
+2025-03-27 17:24:02,337 - INFO - Evaluating for 62% missing data
+2025-03-27 17:24:19,256 - INFO - Evaluating for 65% missing data
+2025-03-27 17:24:24,625 - INFO - Evaluating for 66% missing data
+2025-03-27 17:24:30,236 - INFO - Evaluating for 67% missing data
+2025-03-27 17:24:35,546 - INFO - Evaluating for 68% missing data
+2025-03-27 17:24:40,813 - INFO - Evaluating for 69% missing data
+2025-03-27 17:24:46,409 - INFO - Evaluating for 70% missing data
+2025-03-27 17:24:51,757 - INFO - Evaluating for 71% missing data
+2025-03-27 17:24:56,984 - INFO - Evaluating for 72% missing data
+2025-03-27 17:25:02,231 - INFO - Evaluating for 73% missing data
+2025-03-27 17:25:07,822 - INFO - Evaluating for 74% missing data
+2025-03-27 17:25:13,193 - INFO - Evaluating for 75% missing data
+2025-03-27 17:25:19,059 - INFO - Evaluating for 76% missing data
+2025-03-27 17:25:56,390 - INFO - Evaluating for 83% missing data
+2025-03-27 17:26:01,588 - INFO - Evaluating for 84% missing data
+2025-03-27 17:26:07,075 - INFO - Evaluating for 85% missing data
+2025-03-27 17:26:12,305 - INFO - Evaluating for 86% missing data
+2025-03-27 17:26:17,464 - INFO - Evaluating for 87% missing data
+2025-03-27 17:26:22,665 - INFO - Evaluating for 88% missing data
+2025-03-27 17:26:59,411 - INFO - Evaluating for 95% missing data
+2025-03-27 17:27:04,487 - INFO - Evaluating for 96% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 17:27:09,554 - INFO - Evaluating for 97% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 17:27:14,875 - INFO - Evaluating for 98% missing data
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:202: RuntimeWarning: All-NaN slice encountered
+  vmin = np.nanmin(calc_data)
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/seaborn/matrix.py:207: RuntimeWarning: All-NaN slice encountered
+  vmax = np.nanmax(calc_data)
+2025-03-27 17:27:19,888 - INFO - Evaluating for 99% missing data
+2025-03-27 17:27:25,079 - INFO - Analysis completed and all results saved.

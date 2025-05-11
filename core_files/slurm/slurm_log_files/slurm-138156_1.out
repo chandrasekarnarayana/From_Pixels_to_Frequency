@@ -1,0 +1,102 @@
+ARRAY_TASK_ID: 1
+GPU Info:
+Thu Mar 27 10:26:36 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 555.42.06              Driver Version: 555.42.06      CUDA Version: 12.5     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:1A:00.0 Off |                    0 |
+|  0%   30C    P8             21W /  300W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+2025-03-27 10:26:56.514922: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-03-27 10:27:14.720463: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-03-27 10:27:54,878 - INFO - Images preprocessed.
+2025-03-27 10:27:58.958584: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1928] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 43720 MB memory:  -> device: 0, name: NVIDIA A40, pci bus id: 0000:1a:00.0, compute capability: 8.6
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1743067684.099400 2234493 service.cc:145] XLA service 0x7f025c00fa50 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1743067684.099446 2234493 service.cc:153]   StreamExecutor device (0): NVIDIA A40, Compute Capability 8.6
+2025-03-27 10:28:04.685053: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-03-27 10:28:08.669298: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:465] Loaded cuDNN version 8900
+I0000 00:00:1743067707.368796 2234493 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-03-27 10:36:07,146 - INFO - vgg16 Original MNIST Test Accuracy: 0.953400
+2025-03-27 10:39:04,907 - INFO - vgg16 FFT MNIST Test Accuracy: 0.199600
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/home/chandrasekar.subramani-narayana/.local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+2025-03-27 10:45:54,674 - INFO - vgg16 Wavelet MNIST Test Accuracy: 0.970700
+2025-03-27 10:45:55,500 - INFO - Images preprocessed.
+2025-03-27 10:45:55,501 - INFO - Evaluating for 0% missing data
+2025-03-27 10:46:02,365 - INFO - Evaluating for 1% missing data
+2025-03-27 10:46:07,681 - INFO - Evaluating for 2% missing data
+2025-03-27 10:46:13,120 - INFO - Evaluating for 3% missing data
+2025-03-27 10:46:18,347 - INFO - Evaluating for 4% missing data
+2025-03-27 10:46:23,564 - INFO - Evaluating for 5% missing data
+2025-03-27 10:47:01,070 - INFO - Evaluating for 12% missing data
+2025-03-27 10:47:06,289 - INFO - Evaluating for 13% missing data
+2025-03-27 10:47:12,264 - INFO - Evaluating for 14% missing data
+2025-03-27 10:47:18,025 - INFO - Evaluating for 15% missing data
+2025-03-27 10:47:23,228 - INFO - Evaluating for 16% missing data
+-03-27 10:46:55,837 - INFO - Evaluating for 11% missing data
+2025-03-27 10:48:01,367 - INFO - Evaluating for 23% missing data
+2025-03-27 10:48:07,098 - INFO - Evaluating for 24% missing data
+2025-03-27 10:48:12,339 - INFO - Evaluating for 25% missing data
+2025-03-27 10:48:17,519 - INFO - Evaluating for 26% missing data
+2025-03-27 10:48:23,032 - INFO - Evaluating for 27% missing data
+2025-03-27 10:48:28,360 - INFO - Evaluating for 28% missing data
+2025-03-27 10:49:00,380 - INFO - Evaluating for 34% missing data
+2025-03-27 10:49:05,687 - INFO - Evaluating for 35% missing data
+2025-03-27 10:49:10,988 - INFO - Evaluating for 36% missing data
+2025-03-27 10:49:16,592 - INFO - Evaluating for 37% missing data
+2025-03-27 10:49:21,841 - INFO - Evaluating for 38% missing data
+2025-03-27 10:49:33,135 - INFO - Evaluating for 40% missing data
+2025-03-27 10:50:05,595 - INFO - Evaluating for 46% missing data
+2025-03-27 10:50:11,186 - INFO - Evaluating for 47% missing data
+2025-03-27 10:50:17,053 - INFO - Evaluating for 48% missing data
+2025-03-27 10:49:54,495 - INFO - Evaluating for 44% missing data
+2025-03-27 10:50:00,307 - INFO - Evaluating for 45% missing data
+2025-03-27 10:50:55,164 - INFO - Evaluating for 55% missing data
+2025-03-27 10:51:00,489 - INFO - Evaluating for 56% missing data
+2025-03-27 10:51:06,022 - INFO - Evaluating for 57% missing data
+2025-03-27 10:50:39,074 - INFO - Evaluating for 52% missing data
+2025-03-27 10:50:44,602 - INFO - Evaluating for 53% missing data
+2025-03-27 10:50:49,874 - INFO - Evaluating for 54% missing data
+2025-03-27 10:51:44,220 - INFO - Evaluating for 64% missing data
+2025-03-27 10:51:49,568 - INFO - Evaluating for 65% missing data
+2025-03-27 10:51:54,922 - INFO - Evaluating for 66% missing data
+2025-03-27 10:52:00,494 - INFO - Evaluating for 67% missing data
+2025-03-27 10:52:05,795 - INFO - Evaluating for 68% missing data
+2025-03-27 10:51:38,375 - INFO - Evaluating for 63% missing data
+2025-03-27 10:52:38,038 - INFO - Evaluating for 74% missing data
+2025-03-27 10:52:16,630 - INFO - Evaluating for 70% missing data
+2025-03-27 10:52:21,924 - INFO - Evaluating for 71% missing data
+2025-03-27 10:52:27,213 - INFO - Evaluating for 72% missing data
+2025-03-27 10:52:32,774 - INFO - Evaluating for 73% missing data
+2025-03-27 10:53:00,045 - INFO - Evaluating for 78% missing data
+2025-03-27 10:53:05,329 - INFO - Evaluating for 79% missing data
+2025-03-27 10:52:54,752 - INFO - Evaluating for 77% missing data
+2025-03-27 10:53:16,217 - INFO - Evaluating for 81% missing data
+2025-03-27 10:53:33,769 - INFO - Evaluating for 84% missing data
+2025-03-27 10:53:27,924 - INFO - Evaluating for 83% missing data
+2025-03-27 10:53:44,388 - INFO - Evaluating for 86% missing data
+2025-03-27 10:53:49,936 - INFO - Eval2025-03-27 10:53:55,222 - IN2025-03-27 10:54:01,003 - INFO - Eval2025-03-27 10:54:11,771 - INFO - Evaluating for 91% missing data
+2025-03-27 10:54:16,993 - IN2025-03-27 10:54:27,747 - INFO - Evaluating for 94% missing data
+FO - Evaluating for 93% missing data
+2025-03-27 10:54:43,527 - INFO - Evaluating for 97% missing data
+2025-03-27 10:54:49,582 - INFO - Evaluating for 98% missing data
+2025-03-27 10:55:00,319 - INFO - Analysis completed and all results saved.
