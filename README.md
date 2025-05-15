@@ -1,106 +1,52 @@
-## Project Overview
+# From Pixels to Frequency: CNN, VGG16, and ResNet-50 Performance on Spatial, FFT, and Wavelet Domains of MNIST and Fashion MNIST
 
-This project investigates and compares the performance of three convolutional neural network (CNN) architectures on two popular image classification datasets—MNIST and Fashion MNIST. The architectures include:
+## Overview
 
-- **Simple CNN:** A baseline model designed from scratch.
-- **VGG16:** A pretrained model using transfer learning.
-- **ResNet50:** Another powerful pretrained model using transfer learning.
+This repository accompanies our study, "From Pixels to Frequency," which explores how different input representations—spatial, frequency (FFT), and wavelet domains—affect the performance of convolutional neural networks (CNNs) on image classification tasks.
 
-The goal is to evaluate how these architectures perform across three types of input representations:
-  
-1. **Original Grayscale Images:** The raw 28×28 single-channel images.
-2. **FFT Transformed Images:** Images transformed into the frequency domain using the Fast Fourier Transform (FFT), with features captured as magnitude and phase channels.
-3. **Wavelet Transformed Images:** Images processed using discrete wavelet transforms to capture multi-scale features through approximation and detail coefficients.
+We evaluate three CNN architectures:
 
----
+* **Simple CNN**: A custom-designed network trained from scratch.
+* **VGG16**: A pretrained model with frozen convolutional layers.
+* **ResNet-50**: Another pretrained model with frozen convolutional layers.
 
-## Key Objectives
+These models are tested on two standard datasets: MNIST and Fashion MNIST.
 
-- **Model Comparison:**  
-  Benchmark and contrast a simple CNN (built from scratch) against advanced transfer learning architectures (VGG16 and ResNet50) to understand the trade-offs between model complexity and performance.
+## Input Representations
 
-- **Input Representation Impact:**  
-  Determine the effect of different image transformation techniques (original, FFT, and wavelet) on classification performance.
+We preprocess the datasets into three distinct forms:
 
-- **Dataset Generalization:**  
-  Analyze how well each model performs on two distinct datasets (MNIST and Fashion MNIST), which vary in content complexity and visual features.
+1. **Original Grayscale Images**: The raw 28×28 single-channel images.
+2. **FFT Transformed Images**: Images converted to the frequency domain using the Fast Fourier Transform, capturing magnitude and phase information.
+3. **Wavelet Transformed Images**: Images processed using discrete wavelet transforms to capture both spatial and frequency information.
 
----
+## Key Findings
 
-## Dataset
+* **Wavelet Transforms Excel in Accuracy and Robustness**
+Across both MNIST and Fashion MNIST, wavelet-transformed inputs consistently led to the highest classification accuracies—e.g., 99.36% for CNN and 97.07% for VGG16 on MNIST—outperforming raw spatial and FFT representations. Wavelets capture multi-scale, localized spatial-frequency features that better align with convolutional architectures.
 
-- **MNIST:**  
-  - **Content:** Handwritten digits (0–9).  
-  - **Properties:** Grayscale images of size 28×28, simple visual features.
+* **FFT Representations Are Less Effective**
+Models trained on FFT-transformed data performed poorly, particularly with VGG16 and ResNet-50. The global nature of FFT fails to preserve local structure, which is essential for tasks like digit and fashion item classification. This misalignment led to overfitting on certain classes (e.g., digit "1" or shirt in Fashion MNIST) and poor generalization.
 
-- **Fashion MNIST:**  
-  - **Content:** Clothing items (e.g., shirts, trousers, sneakers).  
-  - **Properties:** Grayscale images of size 28×28, with more complex textures and shapes than MNIST.
+* **Simple CNNs Outperform Pretrained Models in Adaptability**
+The custom CNN, trained from scratch, adapted more effectively to different data representations. Its domain-specific learning outperformed transfer-learned VGG16 and ResNet-50, especially for wavelet inputs, highlighting the strength of task-tuned architectures over general-purpose pretrained ones.
 
-*Both datasets undergo normalization (scaling pixel values to [0, 1]) and reshaping (adding an explicit channel dimension) to prepare them for model input.*
+* **Dimensionality Reduction Techniques Are Not Predictive of Performance**
+PCA and t-SNE projections showed poor class separability across all domains (spatial, FFT, wavelet), with low silhouette scores. However, this lack of separability did not correlate with model performance—CNNs still achieved high accuracy, underscoring that deep models can learn meaningful representations even when class boundaries are ambiguous in low-dimensional space.
 
----
+* **Wavelets Enhance Robustness Against Data Corruption**
+Under simulated input corruption (up to 99% pixel drop), wavelet-based models (especially CNN and VGG16) retained better performance compared to FFT and even spatial inputs. This robustness makes wavelet preprocessing ideal for real-world applications like medical imaging, remote sensing, and degraded video feeds.
 
-## Methodology
+* **Simple Haar Transform is Sufficient**
+Notably, these performance gains were achieved using a basic level-1 Haar wavelet decomposition—without complex sub-band fusion or stacking methods. This simplicity makes the approach lightweight, interpretable, and suitable for resource-constrained environments.
 
-### Data Processing
+## Repository Structure
 
-- **Normalization & Reshaping:**  
-  Convert pixel values to float32 in the range [0, 1] and reshape images from (28, 28) to (28, 28, 1).
-
-- **Feature Extraction Techniques:**
-  - **Original Images:**  
-    Use the preprocessed grayscale images directly.
-  - **FFT Transformation:**  
-    Apply a 2D FFT on the single-channel images. Extract and combine magnitude and phase information into a two-channel image.
-  - **Wavelet Transformation:**  
-    Apply discrete wavelet transforms (e.g., using Haar wavelets) to decompose images. Resize and stack the approximation and detail coefficients to form a four-channel image.
-
-- **Input Transformation for Transfer Learning:**  
-  The models based on VGG16 and ResNet50 require input images of shape (224, 224, 3). A dedicated transformer (built with a resizing layer and a convolutional adjustment, if needed) converts the raw input images (whether 1, 2, or 4 channels) into the required format.
-
-### Experimental Design
-
-- **Architectures:**
-  - **Simple CNN:**  
-    A custom-built model that serves as a baseline for performance comparisons.
-  - **VGG16 & ResNet50:**  
-    Pretrained models adapted via transfer learning. Their base layers are frozen, and custom fully connected layers are added for the final classification task.
-
-- **Training Regimen:**
-  - **Datasets:** Experiments are run on both MNIST and Fashion MNIST.
-  - **Data Representations:** For each dataset, separate models are trained on the original images, FFT-transformed images, and wavelet-transformed images.
-  - **Callbacks:**  
-    - *EarlyStopping* to avoid overfitting.
-    - *ModelCheckpoint* to store the best-performing model.
-    - *ReduceLROnPlateau* to adjust the learning rate dynamically.
-
-- **Evaluation Metrics:**
-  - **Accuracy:** Overall percentage of correctly classified samples.
-  - **Classification Report:** Includes precision, recall, and F1-score for each class.
-  - **Confusion Matrix:** Detailed breakdown of prediction errors to identify misclassification patterns.
-
-### Metrics of Evaluation
-
-Each trained model is evaluated using:
-- **Overall Test Accuracy:** How well the model generalizes on unseen data.
-- **Classification Report & Confusion Matrix:** Provide insights into class-specific performance and misclassifications.
-
----
-
-## Deliverables
-
-- **Model Checkpoints:**  
-  Saved models (in `.keras` format) for each architecture (Simple CNN, VGG16, ResNet50) and each data representation (original, FFT, wavelet) on both MNIST and Fashion MNIST.
-
-- **Evaluation Outputs:**  
-  Detailed classification reports and confusion matrices for each experimental branch.
-
-- **Jupyter Notebook Documentation:**  
-  A well-commented notebook that details all aspects of data processing, model building, training, and evaluation. This document serves as both a record of the experiments and a reproducible resource for future work.
-
-- **Comparative Analysis Report:**  
-  A summary comparing the performance of the three architectures across different datasets and data representations, including insights on which combinations yield the best results and recommendations for future research.
+* `core_files/`: Contains the main scripts for data preprocessing, model training, and evaluation.
+* `accuracy_data_loss_robustness/`: Includes metrics and plots related to model accuracy and loss across different input representations.
+* `Confusion_matrix/`: Stores confusion matrices for each model and input type.
+* `Output_metrics/`: Provides detailed performance metrics for all experiments.
+* `old_experiments/`: Archives previous versions of experiments and scripts.
 
 ---
 
